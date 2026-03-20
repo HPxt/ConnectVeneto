@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* white */
+    --foreground: 220 10% 23%; /* Dark blueish gray */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 10% 23%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 23%;
+    --primary: 30 39% 46%; /* #A37549 Gold/Brown */
+    --primary-foreground: 0 0% 100%; /* White for contrast on gold */
+    --secondary: 0 0% 94%; /* Light gray */
+    --secondary-foreground: 220 10% 23%; /* Dark blueish gray */
+    --muted: 0 0% 92%; /* Light gray - Adjusted for better contrast */
+    --muted-foreground: 220 10% 45%; /* Medium blueish gray */
+    --accent: 38 59% 68%; /* #DFB87F */
+    --accent-foreground: 0 0% 10%; /* Dark text on active gold */
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White for destructive */
+    --success: 170 60% 50%; /* Green */
+    --success-foreground: 0 0% 100%; /* White for success */
+    --border: 0 0% 89%; /* Slightly darker gray border */
+    --input: 0 0% 93%; /* Lighter gray for input */
+    --ring: 220 10% 45%; /* Medium blueish gray for rings - was primary gold */
+
+    /* Admin specific colors */
+    --admin-primary: 170 60% 50%;
+    --admin-ring: 170 60% 50%;
+    
+    /* Chart Colors - Green Palette */
+    --chart-1: 170 60% 40%; /* Slightly darker green */
+    --chart-2: 170 50% 60%; /* Lighter green */
+    --chart-3: 170 65% 35%; /* Darker green */
+    --chart-4: 170 45% 70%; /* Soft light green */
+    --chart-5: 170 40% 80%; /* Very light green */
+    --radius: 0.5rem;
+
+    /* Sidebar specific */
+    --sidebar-background: 220 20% 96%; /* hsl(220, 20%, 96%) */
+    --sidebar-foreground: 220 10% 45%; /* Medium blueish Gray for icons/text */
+    --sidebar-primary: 38 59% 68%; /* #DFB87F */
+    --sidebar-primary-foreground: 0 0% 10%; /* Dark text on active gold */
+    --sidebar-accent: 0 0% 94%; /* Hover item background - light gray */
+    --sidebar-accent-foreground: 0 0% 13%; /* Hover item text - dark gray */
+    --sidebar-border: 0 0% 89%; /* Light gray border */
+    --sidebar-ring: 38 59% 68%; /* #DFB87F */
+
+    --header-height: 3.25rem; /* 52px, was 4rem */
+    --header-background: 30 2% 16%; /* #2B2A27 */
+    --header-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 210 20% 10%; /* Dark cool gray */
+    --foreground: 210 20% 95%; /* Almost white, cool tone */
+    --card: 210 20% 12%; /* Slightly lighter dark cool gray */
+    --card-foreground: 210 20% 95%;
+    --popover: 210 20% 10%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 30 39% 46%; /* #A37549 Gold/Brown - Unchanged */
+    --primary-foreground: 0 0% 10%; /* Dark text for contrast on gold - Unchanged */
+    --secondary: 210 15% 18%; /* Cool gray */
+    --secondary-foreground: 210 20% 95%;
+    --muted: 210 15% 18%; /* Cool gray */
+    --muted-foreground: 210 15% 70%; /* Light cool gray for muted text */
+    --accent: 38 59% 68%; /* #DFB87F - Unchanged */
+    --accent-foreground: 0 0% 10%; /* Dark text on active gold - Unchanged */
+    --destructive: 0 72% 51%; /* Red */
+    --destructive-foreground: 0 0% 100%; /* White for destructive */
+    --success: 170 60% 50%; /* Green */
+    --success-foreground: 0 0% 100%; /* White for success */
+    --border: 210 15% 25%; /* Visible cool gray border */
+    --input: 210 15% 25%;
+    --ring: 210 15% 70%; /* Light cool gray for rings */
+
+    /* Admin specific colors */
+    --admin-primary: 170 60% 50%;
+    --admin-ring: 170 60% 50%;
+
+    /* Chart Colors - Green Palette */
+    --chart-1: 170 60% 40%; /* Slightly darker green */
+    --chart-2: 170 50% 60%; /* Lighter green */
+    --chart-3: 170 65% 35%; /* Darker green */
+    --chart-4: 170 45% 70%; /* Soft light green */
+    --chart-5: 170 40% 80%; /* Very light green */
+
+    /* Sidebar specific for dark */
+    --sidebar-background: 210 20% 14%; /* Slightly different cool dark gray */
+    --sidebar-foreground: 210 20% 95%; /* User requested */
+    --sidebar-primary: 38 59% 68%; /* Unchanged */
+    --sidebar-primary-foreground: 0 0% 10%; /* Unchanged */
+    --sidebar-accent: 210 15% 22%; /* Hover cool gray */
+    --sidebar-accent-foreground: 210 20% 95%; /* Hover text */
+    --sidebar-border: 210 20% 12%;
+    --sidebar-ring: 38 59% 68%; /* Unchanged */
+    
+    --header-background: 30 2% 16%; /* Unchanged */
+    --header-foreground: 0 0% 100%; /* Unchanged */
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .prose {
+    @apply text-foreground;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-foreground;
+  }
+  .prose strong {
+    @apply text-foreground;
+  }
+  .prose a {
+    @apply text-foreground underline;
+  }
+  .prose blockquote {
+    @apply border-l-primary text-muted-foreground;
+  }
+  .prose code {
+    @apply text-foreground;
+  }
+  
+  .dark .prose {
+    @apply text-foreground;
+  }
+  .dark .prose h1, .dark .prose h2, .dark .prose h3, .dark .prose h4, .dark .prose h5, .dark .prose h6 {
+    @apply text-foreground;
+  }
+  .dark .prose strong {
+    @apply text-foreground;
+  }
+  .dark .prose a {
+    @apply text-foreground underline;
+  }
+  .dark .prose blockquote {
+    @apply border-l-primary text-muted-foreground;
+  }
+  .dark .prose code {
+    @apply text-foreground;
+  }
+}
+
+@layer utilities {
+  .no-day-hover .rdp-day:not([aria-disabled="true"]) {
+    cursor: default !important;
+  }
+  .no-day-hover .rdp-button:not([aria-disabled="true"]):hover {
+    background-color: transparent;
+  }
+}
